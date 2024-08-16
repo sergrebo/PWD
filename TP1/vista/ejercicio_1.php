@@ -8,6 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
   <title>Signo número</title>
 </head>
 
@@ -18,7 +19,7 @@
     enviado fue: positivo, cero o negativo. Añadir un link, a la página que visualiza la
     respuesta, que permita volver a la página anterior.</p>
   <form action="./action/action_ejercicio_1.php" method="get">
-    <label for="numero">Número </label><input type="number" name="numero" id="numero">
+    <label for="numero">Número </label><input type="number" name="numero" id="numero" required>
     <input type="submit" value="Enviar">
   </form>
 </body>
