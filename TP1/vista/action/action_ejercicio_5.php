@@ -31,7 +31,7 @@ if ($_GET) {
 
 <body>
   <main>
-    <h1>Ejercicio 4 - Resultado</h1>
+    <h1>Ejercicio 5 - Resultado</h1>
     <p><?php echo $saludo ?></p>
   </main>
 </body>

@@ -1,8 +1,8 @@
 <?php
-include_once '../../control/Persona.php';
+include_once '../../control/Saludo.php';
 if ($_GET) {
-  $objPersona = new Persona($_GET['nombre'], $_GET['apellido'], $_GET['edad'], $_GET['direccion']);
-  $saludo = $objPersona->saludar();
+  $obj = new Saludo();
+  $saludo = $obj->saludar($_GET);
 } else {
   echo "No se recibieron datos";
 }
