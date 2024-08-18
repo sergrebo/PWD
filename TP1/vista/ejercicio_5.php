@@ -21,26 +21,26 @@
 
     <form action="./action/action_ejercicio_5.php" method="get">
       <div>
-        <label for="nombre">Nombre </label><input type="text" name="nombre" id="nombre">
+        <label for="nombre">Nombre </label><input type="text" name="nombre" id="nombre" required>
       </div>
       <div>
-        <label for="apellido">Apellido </label><input type="text" name="apellido" id="apellido">
+        <label for="apellido">Apellido </label><input type="text" name="apellido" id="apellido" required>
       </div>
       <div>
-        <label for="edad">Edad </label><input type="number" name="edad" id="edad">
+        <label for="edad">Edad </label><input type="number" name="edad" id="edad" required>
       </div>
       <div>
-        <label for="direccion">Dirección </label><input type="text" name="direccion" id="direccion">
+        <label for="direccion">Dirección </label><input type="text" name="direccion" id="direccion" required>
       </div>
       <div>
         <p>Nivel de estudios</p>
-        <input type="radio" name="estudios" id="no" value="no"><label for="no"> No tiene estudios</label>
+        <input type="radio" name="estudios" id="no" value="no" required><label for="no"> No tiene estudios</label>
         <input type="radio" name="estudios" id="primario" value="primario"><label for="primario"> Estudios primarios</label>
         <input type="radio" name="estudios" id="secundario" value="secundario"><label for="secundario"> Estudios secundarios</label>
       </div>
       <div>
         <p>Sexo</p>
-        <input type="radio" name="sexo" id="femenino" value="femenino"><label for="femenino"> Femenino</label>
+        <input type="radio" name="sexo" id="femenino" value="femenino" required><label for="femenino"> Femenino</label>
         <input type="radio" name="sexo" id="masculino" value="masculino"><label for="masculino"> Masculino</label>
       </div>
       <div>

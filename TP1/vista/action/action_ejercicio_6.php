@@ -1,13 +1,21 @@
-<?php
+<?php 
 include_once '../../control/Saludo.php';
 include_once '../../control/Estudios.php';
+include_once '../../control/Deportes.php';
 
-if ($_GET) {
+if ($_POST) {
+  print_r($_POST);
   $objSaludo = new Saludo();
-  $saludo = $objSaludo->saludar($_GET);
+  $saludo = $objSaludo->saludar($_POST);
+
   $objEstudios = new Estudios();
-  $estudios = $objEstudios->mostrarEstudios($_GET['edad'], $_GET['estudios']);
-  $genero = 'Mi genero es ' . $_GET['sexo'];
+  $estudios = $objEstudios->mostrarEstudios($_POST['edad'], $_POST['estudios']);
+  
+  $genero = 'Mi genero es ' . $_POST['sexo'];
+
+  $objDeportes = new Deportes();
+  $deportes = $objDeportes->contarDeportes($_POST);
+
 } else {
   echo "No se recibieron datos";
 }
@@ -30,7 +38,9 @@ if ($_GET) {
     <p><?php echo $saludo ?></p>
     <p><?php echo $estudios ?></p>
     <p><?php echo $genero ?></p>
+    <p><?php echo $deportes ?></p>
   </main>
 </body>
 
 </html>
+?>

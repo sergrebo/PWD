@@ -11,5 +11,13 @@ class Numero {
     }
     return $respuesta;
   }
+
+  public function esNumerico($numero){
+    $respuesta = false;
+    if (is_numeric($numero)) {
+      $respuesta = true;
+    }
+    return $respuesta;
+  }
 }
 ?>

@@ -1,17 +1,9 @@
 <?php
-include_once '../../control/Persona.php';
-include_once '../../control/PersonaMenor.php';
+include_once '../../control/Saludo.php';
 
 if ($_GET) {
-  if ($_GET['edad'] <= 0) {
-    $saludo = 'Debe ingresar un numero de años mayor a cero';
-  } elseif ($_GET['edad'] < 18) {
-    $objPersonaMenor = new PersonaMenor($_GET['nombre'], $_GET['apellido'], $_GET['edad'], $_GET['direccion']);
-    $saludo = $objPersonaMenor->saludar();
-  } elseif ($_GET['edad'] >= 18) {
-    $objPersona = new Persona($_GET['nombre'], $_GET['apellido'], $_GET['edad'], $_GET['direccion']);
-    $saludo = $objPersona->saludar();
-  }
+  $obj = new Saludo();
+  $saludo = $obj->saludar($_GET);
   
 } else {
   echo "No se recibieron datos";
