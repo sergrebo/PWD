@@ -2,6 +2,7 @@ $(document).ready(function () {
   $('#miFormulario').validate({
     //Definición de reglas de validación
     rules: {
+      //La regla se define según el atributo 'name' de la etiqueta input
       numero: {
         required: true,
         number: true

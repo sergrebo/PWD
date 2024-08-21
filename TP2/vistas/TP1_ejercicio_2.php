@@ -21,7 +21,7 @@
     <p>Crear una página php que contenga un formulario HTML que permita ingresar las horas de cursada, de la materia Programación Web Dinámica, por cada día de la semana. Enviar los datos del formulario por el método Get a otra página php que los reciba y complete un array unidimensional. Visualizar por pantalla la cantidad total de horas que se cursan por semana.</p>
 
     <div>
-      <form action="./action/ " method="get" id="formulario" class="needs-validation" novalidate>
+      <form action="./action/TP1_ej2_action.php" method="get" id="formulario" class="needs-validation" novalidate>
 
         <div class="mb-3 form-group">
           <label for="lunes" class="form-label">Lunes</label>

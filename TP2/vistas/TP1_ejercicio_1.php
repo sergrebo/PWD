@@ -26,7 +26,7 @@
         enviado fue: positivo, cero o negativo. Añadir un link, a la página que visualiza la
         respuesta, que permita volver a la página anterior.</p>
       <div class="mt-5">
-        <form action="./action/TP1_ej1 _action.php" method="get" class="needs-validation" novalidate id="miFormulario">
+        <form action="./action/TP1_ej1_action.php" method="get" class="needs-validation" novalidate id="miFormulario">
           <div class="form-group mb-3">
             <label for="numero" class="form-label">Número </label>
             <input type="text" name="numero" id="numero" required class="form-control">

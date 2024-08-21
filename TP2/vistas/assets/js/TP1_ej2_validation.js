@@ -2,14 +2,46 @@ $(document).ready(function () {
   $('#formulario').validate({
     //Reglas de validación.
     rules: {
-      'required-number': {
+      horas_lunes: {
+        required: true,
+        number: true
+      },
+      horas_martes: {
+        required: true,
+        number: true
+      },
+      horas_miercoles: {
+        required: true,
+        number: true
+      },
+      horas_jueves: {
+        required: true,
+        number: true
+      },
+      horas_viernes: {
         required: true,
         number: true
       }
     },
     //Mensajes de fallo en la validación.
     messages: {
-      'required-number': {
+      horas_lunes: {
+        required: 'Este campo es obligatorio',
+        number: 'Debe ingresar un número válido'
+      },
+      horas_martes: {
+        required: 'Este campo es obligatorio',
+        number: 'Debe ingresar un número válido'
+      },
+      horas_miercoles: {
+        required: 'Este campo es obligatorio',
+        number: 'Debe ingresar un número válido'
+      },
+      horas_jueves: {
+        required: 'Este campo es obligatorio',
+        number: 'Debe ingresar un número válido'
+      },
+      horas_viernes: {
         required: 'Este campo es obligatorio',
         number: 'Debe ingresar un número válido'
       }
