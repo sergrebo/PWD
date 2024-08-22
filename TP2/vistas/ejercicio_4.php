@@ -15,78 +15,80 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container mt-2 border shadow-lg p-3 mb-5 bg-body-tertiary rounded">
     <h1>Cinem@s</h1>
     <form action="" method="post" class="needs-validation" id="form" novalidate>
-      <div class="row">
 
-        <div class="col">
-          <div class="form-group">
-            <label for="titulo" class="form-label">Título</label>
-            <input type="text" class="form-control" name="titulo" id="titulo">
-          </div>
-          <div class="form-group">
-            <label for="director" class="form-label">Director</label>
-            <input type="text" class="form-control" name="director" id="director">
-          </div>
-          <div class="form-group">
-            <label for="produccion" class="form-label">Producción</label>
-            <input type="text" class="form-control" name="produccion" id="produccion">
-          </div>
-          <div class="form-group col-4">
-            <label for="nacionalidad" class="form-label">Nacionalidad</label>
-            <input type="text" class="form-control" name="nacionalidad" id="nacionalidad">
-          </div>
-
+      <div class="row mb-3">
+        <div class="form-group col">
+          <label for="titulo" class="form-label fw-bold">Título</label>
+          <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Título">
         </div>
-
-        <div class="col">
-          <div class="form-group">
-            <label for="actores" class="form-label">Actores</label>
-            <input type="text" class="form-control" name="actores" id="actores">
-          </div>
-          <div class="form-group">
-            <label for="guion" class="form-label">Guión</label>
-            <input type="text" class="form-control" name="guion" id="guion">
-          </div>
-          <div class="form-group col-2">
-            <label for="anio" class="form-label">Año</label>
-            <input type="text" class="form-control" name="anio" id="anio">
-          </div>
-          <div class="form-group col-3">
-            <label for="genero" class="form-label">Género</label>
-            <select class="form-select" id="genero" name="genero">
-              <option selected>Comedia</option>
-              <option>Drama</option>
-              <option>Terror</option>
-              <option value="Romanticas">Románticas</option>
-              <option>Suspenso</option>
-              <option>Otras</option>
-            </select>
-          </div>
+        <div class="form-group col">
+          <label for="actores" class="form-label fw-bold">Actores</label>
+          <input type="text" class="form-control" name="actores" id="actores" placeholder="Actores">
         </div>
       </div>
 
-      <div class="row">
+      <div class="row mb-3">
+        <div class="form-group col">
+          <label for="director" class="form-label fw-bold">Director</label>
+          <input type="text" class="form-control" name="director" id="director" placeholder="Director">
+        </div>
+        <div class="form-group col">
+          <label for="guion" class="form-label fw-bold">Guión</label>
+          <input type="text" class="form-control" name="guion" id="guion" placeholder="Guión">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="form-group col-6">
+          <label for="produccion" class="form-label fw-bold">Producción</label>
+          <input type="text" class="form-control" name="produccion" id="produccion">
+        </div>
+        <div class="form-group col-2">
+          <label for="anio" class="form-label fw-bold">Año</label>
+          <input type="text" class="form-control" name="anio" id="anio">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="form-group col-6">
+          <label for="nacionalidad" class="form-label fw-bold">Nacionalidad</label>
+          <input type="text" class="form-control" name="nacionalidad" id="nacionalidad">
+        </div>
         <div class="form-group col-4">
-          <label for="duracion" class="form-label">Duración</label>
+          <label for="genero" class="form-label fw-bold">Género</label>
+          <select class="form-select" id="genero" name="genero">
+            <option selected>Comedia</option>
+            <option>Drama</option>
+            <option>Terror</option>
+            <option value="Romanticas">Románticas</option>
+            <option>Suspenso</option>
+            <option>Otras</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="form-group col-4">
+          <label for="duracion" class="form-label fw-bold">Duración</label>
           <input type="text" class="form-control" name="duracion" id="duracion">
           <span>(minutos)</span>
         </div>
-
         <div class="form-group col-6">
-          <label for="restricciones" class="form-label">Restricciones de edad</label>
+          <label for="restricciones" class="form-label fw-bold">Restricciones de edad</label>
           <div class="row">
             <div class="form-check col">
               <input type="radio" class="form-check-input" name="restricciones" id="todos">
               <label for="todos" class="form-check-label">Todos los públicos</label>
             </div>
             <div class="form-check col">
-              <input type="radio" class="form-check-input" name="restricciones" id="mayores7">
+              <input type="radio" class="form-check-input fw-bold" name="restricciones" id="mayores7">
               <label for="mayores7" class="form-check-label">Mayores de 7 años</label>
             </div>
             <div class="form-check col">
-              <input type="radio" class="form-check-input" name="restricciones" id="mayores18">
+              <input type="radio" class="form-check-input fw-bold" name="restricciones" id="mayores18">
               <label for="mayores18" class="form-check-label">Mayores de 18 años</label>
             </div>
           </div>
@@ -94,9 +96,9 @@
       </div>
 
 
-      <div class="row">
+      <div class="row mb-3">
         <div class="form-group">
-          <label for="sinopsis" class="form-label">Sinópsis</label>
+          <label for="sinopsis" class="form-label fw-bold">Sinópsis</label>
           <textarea name="sinopsis" id="sinopsis" class="form-control col-12"></textarea>
         </div>
       </div>
