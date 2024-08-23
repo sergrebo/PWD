@@ -82,15 +82,15 @@
           <label for="restricciones" class="form-label fw-bold">Restricciones de edad</label>
           <div class="row">
             <div class="form-check col">
-              <input type="radio" class="form-check-input" name="restricciones" id="todos">
+              <input type="radio" class="form-check-input" name="restricciones" id="todos" value="apta para todo público">
               <label for="todos" class="form-check-label">Todos los públicos</label>
             </div>
             <div class="form-check col">
-              <input type="radio" class="form-check-input fw-bold" name="restricciones" id="mayores7">
+              <input type="radio" class="form-check-input fw-bold" name="restricciones" id="mayores7" value="mayores de 7 años">
               <label for="mayores7" class="form-check-label">Mayores de 7 años</label>
             </div>
             <div class="form-check col">
-              <input type="radio" class="form-check-input fw-bold" name="restricciones" id="mayores18">
+              <input type="radio" class="form-check-input fw-bold" name="restricciones" id="mayores18" value="mayores de 18 años">
               <label for="mayores18" class="form-check-label">Mayores de 18 años</label>
             </div>
           </div>

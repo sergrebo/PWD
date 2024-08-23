@@ -1,14 +1,18 @@
-<?php 
-class Impresion{
-  public function imprimir($arreglo){
-    $resultado = [];
+<?php
+class Impresion
+{
+  public function imprimir($arreglo)
+  {
+    $valores = [];
+    $resultado = "";
     foreach ($arreglo as $clave => $valor) {
       //$resultado = $resultado . $clave . ': '. $valor . "\n";
-      array_push($resultado, $valor);
+      array_push($valores, $valor);
     }
-print_r($resultado);
-$titulos = ['Título: ', 'Actores: ', ]; 
+    $titulos = ['Título', 'Actores', 'Director', 'Guión', 'Producción', 'Año', 'Nacionalidad', 'Género', 'Duración', 'Restricciones de edad'];
+    for ($i = 0; $i < 10; $i++) {
+      $resultado = $resultado . '<strong>' . $titulos[$i] . '</strong>' . ': ' . $valores[$i] . '<br>';
+    }
     return $resultado;
   }
 }
-?>
