@@ -16,8 +16,10 @@
 
 <body>
   <div class="container mt-2 border shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-    <h1>Cinem@s</h1>
-    <form action="" method="post" class="needs-validation" id="form" novalidate>
+
+      <h1 class="form-label fw-bold">Cinem@s</h1>
+    
+    <form action="./action/action_ejercicio_4.php" method="post" class="needs-validation" id="form" novalidate>
 
       <div class="row mb-3">
         <div class="form-group col">

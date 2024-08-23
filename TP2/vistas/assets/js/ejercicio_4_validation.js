@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('form').validate({
+  $('#form').validate({
     rules: {
       titulo: 'required',
       director: 'required',
