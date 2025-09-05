@@ -1,0 +1,19 @@
+/*
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+*/
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  margin-left: 4rem;
+}
+
+.container {
+  flex: 1;
+}
