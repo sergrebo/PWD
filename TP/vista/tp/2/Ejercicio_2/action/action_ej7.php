@@ -1,7 +1,7 @@
 <?php
 
-include_once "../../../../control/1/Calculadora.php";
-include_once '../../../../utils/funciones.php';
+include_once "../../../../../control/1/Calculadora.php";
+include_once '../../../../../utils/funciones.php';
 
 
     $datos = darDatosSubmitted();
@@ -18,7 +18,7 @@ include_once '../../../../utils/funciones.php';
 </head>
 <body> -->
 <?php
-    include_once '../../../estructura/cabecera-retorno.php';
+    include_once '../../../../estructura/cabecera-retorno.php';
 ?>
     <div class="container mt-4">
         <h1>Resultado</h1>
@@ -28,5 +28,5 @@ include_once '../../../../utils/funciones.php';
 <!-- </body>
 </html>  -->
 <?php
-    include_once '../../../estructura/pie.php';
+    include_once '../../../../estructura/pie.php';
 ?>
