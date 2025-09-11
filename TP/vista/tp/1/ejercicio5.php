@@ -1,19 +1,9 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Form Saludo</title>
-</head>
-<body> -->
-<?php
-  include_once '../../estructura/cabecera-retorno.php';
-?>
+<?php include_once '../../estructura/cabecera-retorno.php' ?>
+
 <h1>Ejercicio N°5</h1>
 <h3>Consigna</h3>
 <p>Modificar el formulario del ejercicio anterior solicitando, tal que usando componentes “radios buttons” se ingrese el nivel de estudio de la persona: 1-no tiene estudios, 2-estudios primarios, 3-estudios secundarios. Agregar el componente que crea más apropiado para solicitar el sexo. En la página que procesa el formulario mostrar además un mensaje que indique el tipo de estudios que posee y su sexo.</p>
-<form action="./action/action_ej5.php" method="get">
+<form action="./action_ej5.php" method="get">
   <div>
     <label for="nombre">Nombre</label> 
     <input type="text" name="nombre" id="nombre" required pattern="[A-Za-z]+" title="El campo solo puede ser completado con letras.">
@@ -46,7 +36,7 @@
     <br>
     <div>
       <h5>Sexo</h5>
-      <select name="genero" id="genero" required>
+      <select name="sexo" id="sexo" required>
         <option value="" disabled selected>Seleccione sexo</option>
         <option value="masculino">Masculino</option>
         <option value="femenino">Femenino</option>
@@ -56,8 +46,5 @@
     <input type="submit">
   </div>
 </form>
-<!-- </body>
-</html> -->
-<?php
-  include_once '../../estructura/pie.php';
-?>
+
+<?php include_once '../../estructura/pie.php' ?>

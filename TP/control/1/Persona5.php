@@ -8,16 +8,16 @@ class Persona{
     $apellido = $datos["apellido"];
     $edad = $datos["edad"];
     $direccion = $datos["direccion"];
-    $genero = $datos["genero"];
+    $sexo = $datos["sexo"];
     $estudios = $datos["opcion"];
 
     if($edad >= 18){
       $saludo = "Hola, yo soy " . $nombre . " " . $apellido . " tengo " . $edad . " años y vivo en " . $direccion . ".";
 
       if ($estudios == "no") {
-        $saludo = $saludo . " No tengo estudios. Mi sexo es " . $genero . ".";
+        $saludo = $saludo . " No tengo estudios. Mi sexo es " . $sexo . ".";
       } else {
-        $saludo = $saludo . " Mi nivel de estudios es " . $estudios . ". Mi sexo es " . $genero . ".";
+        $saludo = $saludo . " Mi nivel de estudios es " . $estudios . ". Mi sexo es " . $sexo . ".";
       }
 
     }elseif($edad < 18 && $edad > 0){

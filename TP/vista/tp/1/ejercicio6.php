@@ -1,19 +1,9 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Form Saludo</title>
-</head>
-<body> -->
-<?php
-  include_once '../../estructura/cabecera-retorno.php';
-?>
+<?php include_once '../../estructura/cabecera-retorno.php' ?>
+
   <h1>Ejercicio N°6</h1>
   <h3>Consigna</h3>
   <p>Modificar el formulario del ejercicio anterior para que permita seleccionar los diferentes deportes que practica (futbol, basket, tennis, voley) un alumno. Mostrar en la página que procesa el formulario la cantidad de deportes que practica.</p>
-  <form action="./action/action_ej6.php" method="get">
+  <form action="./action_ej6.php" method="get">
     <div>
       <label for="nombre">Nombre</label> 
       <input type="text" name="nombre" id="nombre" required pattern="[A-Za-z]+" title="El campo solo puede ser completado con letras.">
@@ -46,7 +36,7 @@
       <br>
       <div>
         <h5>Sexo</h5>
-        <select name="genero" id="genero" required>
+        <select name="sexo" id="sexo" required>
           <option value="" disabled selected>Seleccione sexo</option>
           <option value="masculino">Masculino</option>
           <option value="femenino">Femenino</option>
@@ -71,8 +61,5 @@
       <input type="submit">
     </div>
   </form>
-<!-- </body>
-</html> -->
-<?php
-  include_once '../../estructura/pie.php';
-?>
+
+<?php include_once '../../estructura/pie.php' ?>

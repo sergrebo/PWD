@@ -10,7 +10,7 @@ class Persona{
     $apellido = $datos["apellido"];
     $edad = $datos["edad"];
     $direccion = $datos["direccion"];
-    $genero = $datos["genero"];
+    $sexo = $datos["sexo"];
     $estudios = $datos["opcion"];
     $deportes = isset($datos["deporte"]) ? $datos["deporte"] : [];
 
@@ -20,9 +20,9 @@ class Persona{
       $saludo = "Hola, yo soy " . $nombre . " " . $apellido . " tengo " . $edad . " años y vivo en " . $direccion .  ".";
 
       if ($estudios == "no") {
-        $saludo = $saludo . " No tengo estudios. Mi sexo es " . $genero . ". Practico " . $cantDeportes . " deportes.";
+        $saludo = $saludo . " No tengo estudios. Mi sexo es " . $sexo . ". Practico " . $cantDeportes . " deportes.";
       } else {
-        $saludo = $saludo . " Mi nivel de estudios es " . $estudios . ". Mi sexo es " . $genero . ". Practico " . $cantDeportes . " deportes.";
+        $saludo = $saludo . " Mi nivel de estudios es " . $estudios . ". Mi sexo es " . $sexo . ". Practico " . $cantDeportes . " deportes.";
       }
 
     }elseif($edad < 18 && $edad > 0){

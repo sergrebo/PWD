@@ -1,20 +1,10 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Form Saludo</title>
-</head>
-<body> -->
-<?php
-  include_once '../../../estructura/cabecera-retorno.php';
-?>
+<?php include_once '../../estructura/cabecera-retorno.php' ?>
+
   <main class="container">
     <h1 class="mt-4 text-center">Ejercicio N°6</h1>
     <p>Modificar el formulario del ejercicio anterior para que permita seleccionar los diferentes deportes que practica (futbol, basket, tennis, voley) un alumno. Mostrar en la página que procesa el formulario la cantidad de deportes que practica.</p>
     <div class="col-4 mx-auto">
-      <form action="./action/action_ej6.php" method="get" id="formulario" class="needs-validation" novalidate>
+      <form action="./action_ej1-6.php" method="get" id="formulario" class="needs-validation" novalidate>
         <div class="mb-3 position-relative">
           <label for="nombre">Nombre</label> 
           <input type="text" name="nombre" id="nombre" required class="form-control">
@@ -84,9 +74,6 @@
     </div>
 
   </main>
-  <script src="../../../js/validacion.js"></script>
-<!-- </body>
-</html> -->
-<?php
-    include_once '../../../estructura/pie.php';
-?>
+  <script src="../../js/validacion.js"></script>
+
+<?php include_once '../../estructura/pie.php' ?>

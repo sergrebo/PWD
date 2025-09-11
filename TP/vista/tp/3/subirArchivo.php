@@ -18,18 +18,7 @@
 
   $mensaje = $mensajes[$respuesta];
 
-?>
-<!--
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subida de archivo</title>
-</head>
-<body>
--->
-  <?php include_once '../../estructura/cabecera-retorno.php' ?>
+  include_once '../../estructura/cabecera-retorno.php' ?>
 
   <div class="container mt-4">
     <h2>Estado del archivo</h2>
@@ -37,8 +26,4 @@
     <a href="./ejercicio1.php">Volver</a>
   </div>
 
-
   <?php include_once '../../estructura/pie.php' ?>
-<!--
-</body>
-</html>

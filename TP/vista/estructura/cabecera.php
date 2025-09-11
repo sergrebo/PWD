@@ -51,20 +51,15 @@
               <li class="dropdown-submenu">
                 <a class="dropdown-item" href="#">Ejercicio 2</a>
                 <ul class="dropdown-menu bg-primary text-white">
-                  <li><a class="dropdown-item" href="./vista/tp/2/Ejercicio_2/ejercicio1.php">Ejercicio 1</a></li>
-                  <li><a class="dropdown-item" href="./vista/tp/2/Ejercicio_2/ejercicio2.php">Ejercicio 2</a></li>
-                  <!--
-                                    <li><a class="dropdown-item" href="./TP1/Ejercicio3/Vista/formulario.php">Ejercicio 3</a></li>
-                                    <li><a class="dropdown-item" href="./TP1/Ejercicio4/Vista/formulario.php">Ejercicio 4</a></li>
-                                    <li><a class="dropdown-item" href="./TP1/Ejercicio5/Vista/formulario.php">Ejercicio 5</a></li>
--->
-                  <li><a class="dropdown-item" href="./vista/tp/2/Ejercicio_2/ejercicio6.php">Ejercicio 6</a></li>
-                  <li><a class="dropdown-item" href="./vista/tp/2/Ejercicio_2/ejercicio7.php">Ejercicio 7</a></li>
-                  <li><a class="dropdown-item" href="./vista/tp/2/Ejercicio_2/ejercicio8.php">Ejercicio 8</a></li>
+                  <li><a class="dropdown-item" href="./vista/tp/2/ejercicio1-1.php">Ejercicio 1</a></li>
+                  <li><a class="dropdown-item" href="./vista/tp/2/ejercicio1-2.php">Ejercicio 2</a></li>
+                  <li><a class="dropdown-item" href="./vista/tp/2/ejercicio1-6.php">Ejercicio 6</a></li>
+                  <li><a class="dropdown-item" href="./vista/tp/2/ejercicio1-7.php">Ejercicio 7</a></li>
+                  <li><a class="dropdown-item" href="./vista/tp/2/ejercicio1-8.php">Ejercicio 8</a></li>
                 </ul>
               </li>
-              <li><a class="dropdown-item" href="./TP2/Ejercicio3/Vista/ejercicio3.php">Ejercicio 3</a></li>
-              <li><a class="dropdown-item" href="./TP2/Ejercicio4/Vista/ejercicio4.php">Ejercicio 4</a></li>
+              <li><a class="dropdown-item" href="./vista/tp/2/ejercicio3.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="./vista/tp/2/ejercicio4.php">Ejercicio 4</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -73,9 +68,9 @@
               TP3
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="./TP3/Ejercicio1/Vista/ejercicio1.php">Ejercicio 1</a></li>
-              <li><a class="dropdown-item" href="./TP3/Ejercicio2/Vista/ejercicio2.php">Ejercicio 2</a></li>
-              <li><a class="dropdown-item" href="./TP3/Ejercicio3/Vista/formulario.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="./vista/tp/3/ejercicio1.php">Ejercicio 1</a></li>
+              <li><a class="dropdown-item" href="./vista/tp/3/ejercicio2.php">Ejercicio 2</a></li>
+              <li><a class="dropdown-item" href="./vista/tp/3/ejercicio3.php">Ejercicio 3</a></li>
             </ul>
           </li>
         </ul>
