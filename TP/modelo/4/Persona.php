@@ -15,6 +15,7 @@ class Persona {
     $this->fechaNac = "";
     $this->telefono = "";
     $this->domicilio = "";
+    $this->mensajeOperacion;
   }
 
   public function setear($nroDni,  $apellido,  $nombre,  $fechaNac,  $telefono,  $domicilio){
@@ -58,5 +59,92 @@ class Persona {
 	public function __toString() {
     return "Persona: " . $this->getNroDni() . ", " . $this->getApellido() . ", " . $this->getNombre() . ", " . $this->getFechaNac() . ", " . $this->getTelefono() . ", " . $this->getDomicilio();
   }
-	
+
+  public function cargar(){
+    $respuesta = false;
+    $base = new BaseDatos();
+    $sql = "SELECT * FROM persona WHERE NroDni=" . $this->getNroDni();
+    if ($base->Iniciar()) {
+      $respuesta = $base->Ejecutar($sql);
+      if ($respuesta > -1) {
+        if ($respuesta > 0) {
+          $row = $base->Registro();
+          $this->setear($row['NroDni'], $row['Apellido'], $row['Nombre'], $row['FechaNac'], $row['Telefono'], $row['Domicilio']);
+        }
+      }
+    } else {
+      $this->setMensajeOperacion("Persona->listar: " . $base->getError());
+    }
+    return $respuesta;
+  }
+
+  public function insertar(){
+    $respuesta = false;
+    $base = new BaseDatos();
+    $sql = "INSERT INTO persona(NroDni, Apellido, Nombre, FechaNac, Telefono, Domicilio) VALUES('". $this->getNroDni() . "', '". $this->getApellido() ."', '". $this->getNombre() ."', '". $this->getFechaNac() ."', '". $this->getTelefono() ."', '". $this->getDomicilio() ."')";
+    if ($base->Iniciar()) {
+      if ($base->Ejecutar($sql)) {
+        $respuesta = true;
+      } else {
+        $this->setMensajeOperacion("Persona->insertar: " . $base->getError());
+      }
+    } else {
+      $this->setMensajeOperacion("Persona->insertar: " . $base->getError());
+    }
+    return $respuesta;
+  }
+
+  public function modificar(){
+    $respuesta = false;
+    $base = new BaseDatos();
+    $sql = "UPDATE persona SET Apellido='". $this->getApellido() ."', Nombre='". $this->getNombre() ."', FechaNac='". $this->getFechaNac() ."', Telefono='". $this->getTelefono() ."', Domicilio='". $this->getDomicilio() ."'";
+    if ($base->Iniciar()) {
+      if ($base->Ejecutar($sql)) {
+        $respuesta = true;
+      } else {
+        $this->setMensajeOperacion("Persona->modificar: " . $base->getError());
+      }
+    } else {
+      $this->setMensajeOperacion("Persona->modificar: " . $base->getError());
+    }
+    return $respuesta;
+  }
+
+  public function eliminar(){
+    $respuesta = false;
+    $base = new BaseDatos();
+    $sql = "DELETE FROM persona WHERE NroDni='" . $this->getNroDni() . "'";
+    if ($base->Iniciar()) {
+      if ($base->Ejecutar($sql)) {
+        $respuesta = true;
+      } else {
+        $this->setMensajeOperacion("Persona->eliminar: ". $base->getError());
+      }
+    } else {
+      $this->setMensajeOperacion("Persona->eliminar: " . $base->getError());
+    }
+    return $respuesta;
+  }
+
+  public function listar($parametro=""){
+    $arreglo = array();
+    $base = new BaseDatos();
+    $sql = "SELECT * FROM persona";
+    if ($parametro != "") {
+      $sql .= ' WHERE ' . $parametro;
+    }
+    $respuesta = $base->Ejecutar($sql);
+    if ($respuesta > -1) {
+      if ($respuesta > 0) {
+        while ($row = $base->Registro()) {
+          $obj = new Persona();
+          $obj->setear($row['NroDni'], $row['Apellido'], $row['Nombre'], $row['FechaNac'], $row['Telefono'], $row['Domicilio']);
+          array_push($arreglo, $obj);
+        }
+      }
+    } else {
+      $this->setMensajeOperacion("Persona->listar " . $base->getError());
+    }
+    return $arreglo;
+  }
 }

@@ -14,3 +14,25 @@ function darDatosSubmitted(){
     }
     return $datos;
 }
+
+function verEstructura($e){
+    echo "<pre>";
+    print_r($e);
+    echo "</pre>";
+}
+
+function autoloader($class_name){
+    $directorys = array(
+        $_SESSION['ROOT'] . 'modelo/4/',
+        $_SESSION['ROOT'] . 'modelo/4/conector/',
+        $_SESSION['ROOT'] . 'control/4/',
+    );
+    foreach ($directorys as $directory) {
+        if (file_exists($directory . $class_name . '.php')) {
+            require_once($directory . $class_name . '.php');
+            return;
+        }
+    };
+}
+
+spl_autoload_register('autoloader');
