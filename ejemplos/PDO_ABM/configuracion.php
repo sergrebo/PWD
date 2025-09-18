@@ -2,9 +2,9 @@
 header('Content-Type: text/html; charset=utf-8');
 header ("Cache-Control: no-cache, must-revalidate ");
 
-/////////////////////////////
+//////////////////////
 // CONFIGURACION APP//
-/////////////////////////////
+//////////////////////
 
 $PROYECTO ='PWD/ejemplos/PDO_ABM';
 

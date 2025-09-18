@@ -9,9 +9,9 @@ class AbmAuto{
    */
   private function cargarObjeto($param){
     $obj = null;
-    if (array_key_exists('Patente', $param) && array_key_exists('Marca', $param) && array_key_exists('Modelo', $param) && array_key_exists('DniDuenio', $param)) {            //¿MAYUSCULAS? ¿Se reciben de un formulario?
+    if (array_key_exists('patente', $param) && array_key_exists('marca', $param) && array_key_exists('modelo', $param) && array_key_exists('dniDuenio', $param)) {            //¿MAYUSCULAS? ¿Se reciben de un formulario?
       $obj = new Auto();
-      $obj->setear($param['Patente'], $param['Marca'], $param['Modelo'], $param['DniDuenio']);
+      $obj->setear($param['patente'], $param['marca'], $param['modelo'], $param['dniDuenio']);
     }
     return $obj;
   }
@@ -23,9 +23,9 @@ class AbmAuto{
    */
   private function cargarObjetoConClave($param){
     $obj = null;
-    if (isset($param['Patente'])) {
+    if (isset($param['patente'])) {
       $obj = new Auto();
-      $obj->setear($param['Patente'], null, null, null);
+      $obj->setear($param['patente'], null, null, null);
     }
     return $obj;
   }
@@ -37,7 +37,7 @@ class AbmAuto{
    */
   private function seteadosCamposClaves($param){
     $respuesta = false;
-    if (isset($param['Patente'])) {
+    if (isset($param['patente'])) {
       $respuesta = true;
     }
     return $respuesta;
@@ -50,7 +50,7 @@ class AbmAuto{
    */
   public function alta($param){
     $respuesta = false;
-    //$param['Patente'] = null;
+    //$param['patente'] = null;
     //Linea exclusiva para clases con id incremental
     $objAuto = $this->cargarObjeto($param);
     if ($objAuto != null && $objAuto->insertar()) {
@@ -94,24 +94,46 @@ class AbmAuto{
   /**
    * Permite buscar un objeto
    * @param array $param
-   * @return boolean
+   * @return array
    */
   public function buscar($param){
     $where = " true ";
     if ($param != null) {
-      if (isset($param['Patente'])) {
-        $where .= " and Patente ='". $param['Patente'] ."'";
+      if (isset($param['patente'])) {
+        $where .= " and patente ='". $param['patente'] ."'";
       }
-      if (isset($param['Marca'])) {
-        $where .= " and Marca ='". $param['Marca'] ."'";
+      if (isset($param['marca'])) {
+        $where .= " and marca ='". $param['marca'] ."'";
       }
-      if (isset($param['Modelo'])) {
-        $where .= " and Modelo ='". $param['Modelo'] ."'";
+      if (isset($param['modelo'])) {
+        $where .= " and modelo ='". $param['modelo'] ."'";
       }
-      if (isset($param['DniDuenio'])) {
-        $where .= " and DniDuenio ='". $param['DniDuenio'] ."'";
+      if (isset($param['dniDuenio'])) {
+        $where .= " and dniDuenio ='". $param['dniDuenio'] ."'";
       }
     }
+    //print_r($where);
+    $arreglo = Auto::listar($where);
+    return $arreglo;
+  }
+
+  /**
+   * Transforma un arreglo de objetos en un arreglo de arreglos para manipularlo en vista
+   * @param array $param
+   * @return array
+   */
+  public function arreglar($param){
+    $arregloAux = $this->buscar($param);
+    $arreglo = array();
+    $respuesta = array();
+    foreach ($arregloAux as $objAuto) {
+      $arreglo['patente'] = $objAuto->getPatente();
+      $arreglo['marca'] = $objAuto->getMarca();
+      $arreglo['modelo'] = $objAuto->getModelo();
+      $arreglo['dniDuenio'] = $objAuto->getDniDuenio();
+      array_push($respuesta, $arreglo);
+    }
+    return $respuesta;
   }
 }
 ?>

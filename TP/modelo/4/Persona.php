@@ -126,7 +126,7 @@ class Persona {
     return $respuesta;
   }
 
-  public function listar($parametro=""){
+  public static function listar($parametro=""){
     $arreglo = array();
     $base = new BaseDatos();
     $sql = "SELECT * FROM persona";
@@ -137,6 +137,7 @@ class Persona {
     if ($respuesta > -1) {
       if ($respuesta > 0) {
         while ($row = $base->Registro()) {
+          //print_r($row);
           $obj = new Persona();
           $obj->setear($row['NroDni'], $row['Apellido'], $row['Nombre'], $row['FechaNac'], $row['Telefono'], $row['Domicilio']);
           array_push($arreglo, $obj);
