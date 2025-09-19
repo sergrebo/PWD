@@ -1,5 +1,5 @@
-<main class="container">
-  <table class="table mt-4">
+<!-- <main class="container"> -->
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">Patente</th>
@@ -9,9 +9,9 @@
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($arreglo as $auto) {
+      <?php foreach ($arregloAutos as $auto) {
         echo "<tr><th scope='row'>". $auto['patente'] ."</th><td>". $auto['marca'] ."</td><td>". $auto['modelo'] ."</td><td>". $auto['dniDuenio'] ."</td></tr>";
       } ?>
     </tbody>
   </table>
-</main>
+<!-- </main> -->

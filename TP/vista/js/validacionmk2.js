@@ -7,17 +7,58 @@ $.validator.addMethod("patente_ar", function(value, element) {
   return this.optional(element) || regex.test(value);
 }, "Por favor, ingresa un formato de patente argentino válido (ej: ABC 123 o AB 123 CD)");
 
+/**
+ * Metodo que chequea que el dato ingresado en el campo este solo formado por letras
+ */
+$.validator.addMethod( "lettersonly", function( value, element ) {
+  return this.optional( element ) || /^[A-Za-z]+$/i.test( value );
+}, "Solo puede ingresar letras." );
+
 $(document).ready(function() {
   $("#formulario").validate({
     rules: {
       patente: {
         required: true,
-        patente_ar: true
+        patente_ar: true,
+      },
+      nombre: {
+        required: true,
+        lettersonly: true,
+      },
+      apellido: {
+        required: true,
+        lettersonly: true,
+      },
+      nroDni: {
+        required: true,
+        digits: true,
+      },
+      fechaNac: "required",
+      domicilio: "required",
+      telefono: {
+        required: true,
+        digits: true,
       },
     },
     messages: {
       patente: {
-        required: "Campo obligatorio."
+        required: "Campo obligatorio.",
+      },
+      nombre: {
+        required: "Campo obligatorio.",
+      },
+      apellido: {
+        required: "Campo obligatorio.",
+      },
+      nroDni: {
+        required: "Campo obligatorio.",
+        digits: "Solo puede ingresar digitos."
+      },
+      fechaNac: "Campo obligatorio.",
+      domicilio: "Campo obligatorio.",
+      telefono: {
+        required: "Campo obligatorio.",
+        digits: "Solo puede ingresar digitos.",
       },
     },
     errorElement: 'div',
