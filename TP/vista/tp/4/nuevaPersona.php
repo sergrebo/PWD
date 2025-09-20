@@ -7,7 +7,7 @@ include_once '../../estructura/cabecera-retorno.php' ?>
 
 <main class="container mt-4">
   <h4 class="text-center mb-3">FORMULARIO DE ALTA - PERSONA</h4>
-  <form action="./accionNuevaPersona.php" method="get" id="formulario" class="needs-validation col-6 mx-auto" novalidate>
+  <form action="./accionNuevaPersona.php?origen=nuevaPersona" method="post" id="formulario" class="needs-validation col-6 mx-auto" novalidate>
     <div class="row">
       <div class="col form-group mb-3 position-relative">
         <label for="nombre" class="form-label">Nombre</label>

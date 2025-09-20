@@ -39,6 +39,17 @@ $(document).ready(function() {
         required: true,
         digits: true,
       },
+      dniDuenio: {
+        required: true,
+        digits: true,
+      },
+      marca: "required",
+      modelo: {
+        required: true,
+        digits: true,
+        minlenght: 2,
+        maxlenght: 4,
+      }
     },
     messages: {
       patente: {
@@ -52,13 +63,24 @@ $(document).ready(function() {
       },
       nroDni: {
         required: "Campo obligatorio.",
-        digits: "Solo puede ingresar digitos."
+        digits: "Solo puede ingresar dígitos."
       },
       fechaNac: "Campo obligatorio.",
       domicilio: "Campo obligatorio.",
       telefono: {
         required: "Campo obligatorio.",
-        digits: "Solo puede ingresar digitos.",
+        digits: "Solo puede ingresar dígitos.",
+      },
+      dniDuenio: {
+        required: "Campo obligatorio.",
+        digits: "Solo puede ingresar dígitos."
+      },
+      marca: "Campo obligatorio.",
+      modelo: {
+        required: "Campo obligatorio.",
+        digits: "Solo puede ingresar dígitos.",
+        minlenght: "Mínimo debe ingresar 2 dígitos.",
+        maxlenght: "Máximo pueden ingresar 4 dígitos",
       },
     },
     errorElement: 'div',

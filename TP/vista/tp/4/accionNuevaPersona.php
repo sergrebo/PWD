@@ -3,7 +3,18 @@ include_once '../../../configuracion.php';
 
 //Recuperación de los datos del formulario
 $datos = darDatosSubmitted();
-//print_r($datos); 
+
+//$_GET me indica de donde procede la información. Lo utilizo para definir luego la redirección.
+$origen = isset($_GET['origen']) ? $_GET['origen'] : 'default';
+
+//Definición de URL de redireccionamiento
+$urlNuevaPersona = '../4';
+$urlPersonaNoEncontrada = './elegirPersona.php';
+if ($origen == 'personaNoEncontrada') {
+  $urlDestino = $urlPersonaNoEncontrada;
+} else {
+  $urlDestino = $urlNuevaPersona;
+}
 
 //Creo objeto AbmPersona para acceder a las funciones controladoras
 $objAbmPersona = new AbmPersona();
@@ -20,7 +31,8 @@ if (!empty($arregloRespuesta)) {
   if (!$respuesta) {
     $mensaje = "<h4 class='text-center text-danger'>ERROR - No se pudo cargar el registro persona.</h4>";
   } else {
-    $mensaje = "<h4 class='text-center text-success'>Carga de registro persona exitoso.</h4>";
+    $mensaje = "<h4 class='text-center text-success'>Carga de registro persona exitoso.</h4><p>Serás redireccionado en 5 segundos...</p>";
+    header("refresh:5; url=". $urlDestino);
   }
 }
 
