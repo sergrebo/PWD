@@ -7,7 +7,7 @@
 include_once '../../estructura/cabecera-retorno.php' ?>
 
 <main class="container">
-  <form action="./accionBuscarAuto.php" method="get" id="formulario" class="needs-validation col-6 mx-auto mt-4" novalidate>
+  <form action="./accionBuscarAuto.php" method="post" id="formulario" class="needs-validation col-6 mx-auto mt-4" novalidate>
     <div class="mb-3 position-relative">
       <label for="patente" class="form-label">Ingrese la patente del auto buscado:</label>
       <div class="form-text">La patente ingresada debe tener el formato ABC 123 ó AB 123 BC.</div>
