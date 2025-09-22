@@ -7,6 +7,8 @@ include_once '../../estructura/cabecera-retorno.php' ?>
 
 <main class="container mt-4">
   <h4 class="text-center mb-3">FORMULARIO DE ALTA - PERSONA</h4>
+  <?php include_once './formularioPersona.php' ?>
+<!--
   <form action="./accionNuevaPersona.php?origen=nuevaPersona" method="post" id="formulario" class="needs-validation col-6 mx-auto" novalidate>
     <div class="row">
       <div class="col form-group mb-3 position-relative">
@@ -42,6 +44,7 @@ include_once '../../estructura/cabecera-retorno.php' ?>
       <input type="submit" value="Enviar">
     </div>
   </form>
+-->
 </main>
 <script src="../../js/validacionmk2.js"></script>
 <?php include_once '../../estructura/pie.php' ?>

@@ -10,7 +10,7 @@ $origen = isset($_GET['origen']) ? $_GET['origen'] : 'default';
 //Definición de URL de redireccionamiento
 $urlNuevaPersona = '../4';
 $urlPersonaNoEncontrada = './elegirPersona.php';
-if ($origen == 'personaNoEncontrada') {
+if ($origen == 'elegirPersona') {
   $urlDestino = $urlPersonaNoEncontrada;
 } else {
   $urlDestino = $urlNuevaPersona;
