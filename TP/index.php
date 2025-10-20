@@ -28,6 +28,13 @@
 				</div>
 			</div>
 		</section>
+
+		<section>
+			<div class="row">
+				<a href="./vista/tp/libreria/tarot-cartas.php">API Tarot con Guzzle - Probar conexión</a>
+			</div>
+		</section>
+
 	</article>
 </main>
 

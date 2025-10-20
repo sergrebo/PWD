@@ -26,6 +26,8 @@ function autoloader($class_name){
         $_SESSION['ROOT'] . 'modelo/4/',
         $_SESSION['ROOT'] . 'modelo/4/conector/',
         $_SESSION['ROOT'] . 'control/4/',
+        $_SESSION['ROOT'] . 'modelo/libreria/',
+        $_SESSION['ROOT'] . 'control/libreria/',
     );
     foreach ($directorys as $directory) {
         if (file_exists($directory . $class_name . '.php')) {
