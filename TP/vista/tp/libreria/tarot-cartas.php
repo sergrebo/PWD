@@ -4,7 +4,7 @@ include_once "../../estructura/cabecera-retorno.php";
 
 // Instancia controlador
 $controller = new TarotControlador();
-$data = $controller->listarCartas();
+$data = $controller->obtenerCartas();
 ?>
 
 <div class="container mt-3">

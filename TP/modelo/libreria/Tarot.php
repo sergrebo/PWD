@@ -1,9 +1,9 @@
 <?php
-//require_once 'vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 class Tarot {
   private $client;
-  private $apiBase = 'https://tarotapi.dev/api/v1';
+  private $apiBase = 'https://tarot-api-es.vercel.app/api/v1/';
 
   public function __construct()
   {
@@ -19,7 +19,7 @@ class Tarot {
     $resultado = [];
     
     try {
-      $response = $this->client->request('GET', '/cards');
+      $response = $this->client->request('GET', 'cards');
       $data = json_decode($response->getBody()->getContents(), true);
       $resultado = [
         'success' => true,

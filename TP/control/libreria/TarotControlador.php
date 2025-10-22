@@ -1,8 +1,16 @@
 <?php
+include_once '../../../configuracion.php';
 
 class TarotControlador {
-  public function listarCartas() {
-    $modelo = new Tarot();
-    return $modelo->obtenerTodasLasCartas();
-  }
+    private $tarot;
+
+    public function __construct() {
+        $this->tarot = new Tarot();
+    }
+
+    public function obtenerCartas() {
+        $resultado = $this->tarot->obtenerTodasLasCartas();
+        return $resultado;
+    }
 }
+?>
