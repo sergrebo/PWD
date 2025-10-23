@@ -37,6 +37,9 @@
 		<div class="row">
 			<a href="./vista/tp/libreria/listadoCartas.php">TP Librería - Tarot con Guzzle</a>
 		</div>
+		<div class="row">
+			<a href="./vista/tp/libreria/tirada.php">TP Librería - Tirada de Carta de Tarot</a>
+		</div>
 	</article>
 
 </main>

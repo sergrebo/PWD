@@ -17,3 +17,26 @@ body {
 .container {
   flex: 1;
 }
+
+.card img {
+  border-bottom: 1px solid #ddd;
+}
+.card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.carta-tarot {
+  transition: transform 1s ease, opacity 1s ease;
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+.mostrar-carta {
+  transform: rotateY(0);
+  opacity: 1;
+}

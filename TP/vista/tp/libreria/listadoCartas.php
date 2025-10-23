@@ -16,8 +16,13 @@ $resultado = $control->obtenerCartas();
       <?php foreach ($resultado['data'] as $carta): ?>
         <div class="col-md-3 mb-4">
           <div class="card h-100 shadow-sm">
+            <?php if (!empty($carta['image'])): ?>
+              <img src="<?= htmlspecialchars($carta['image']) ?>" class="card-img-top p-2" alt="<?= htmlspecialchars($carta['name']) ?>" style="max-height: 300px; object-fit: contain;">
+            <?php else: ?>
+              <div class="p-4 text-muted">Sin imagen</div>
+            <?php endif; ?>
             <div class="card-body">
-              <h5 class="card-title"><?= htmlspecialchars($carta['name']) ?></h5>
+              <h5 class="card-title text-center"><?= htmlspecialchars($carta['name']) ?></h5>
               <p class="card-text">
                 <small><?= htmlspecialchars($carta['desc']) ?></small>
               </p>
