@@ -31,12 +31,29 @@ body {
 }
 
 .carta-tarot {
-  transition: transform 1s ease, opacity 1s ease;
-  transform: rotate(180deg);
+  display: inline-block;
   opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease, transform 0.8s ease;
 }
 
+/* Aparece suavemente con un leve zoom */
 .mostrar-carta {
-  transform: rotateY(0);
   opacity: 1;
+  transform: scale(1);
+}
+
+/* Carta al derecho */
+.derecha.mostrar-carta {
+  transform: rotateY(0deg);
+}
+
+/* Carta al revés */
+.reves.mostrar-carta {
+  transform: rotate(180deg); /* gira verticalmente */
+}
+
+/* Resplandor místico opcional */
+.mostrar-carta {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }

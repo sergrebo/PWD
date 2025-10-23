@@ -26,6 +26,7 @@ $carta = $resultado['carta'];
 $orientacion = $resultado['orientacion'];
 $significadoOrientacion = $resultado['significadoOrientacion'];
 $significadoTema = $resultado['significadoTema'];
+$claseOrientacion = ($orientacion === 'al reves') ? 'reves' : 'derecho';
 ?>
 
 <div class="container mt-4">
@@ -33,7 +34,7 @@ $significadoTema = $resultado['significadoTema'];
     <div class="card-body text-center">
       <h2 class="mb-3">Tu carta del Tarot para el tema: <strong><?= ucfirst($tema) ?></strong></h2>
       <h4><?= htmlspecialchars($carta['name']) ?> (<?= $orientacion ?>)</h4>
-      <img src="<?= htmlspecialchars($carta['image']) ?>" alt="Carta del tarot" class="img-fluid rounded shadow-sm my-3 carta-tarot" style="max-height: 450px;">
+      <img src="<?= htmlspecialchars($carta['image']) ?>" alt="Carta del tarot" class="img-fluid rounded shadow-lg my-3 carta-tarot <?= $claseOrientacion ?>" style="max-height: 450px;">
       <p class="lead"><?= htmlspecialchars($significadoOrientacion) ?></p>
       <p class="lead"><?= htmlspecialchars($significadoTema) ?></p>
       <p class="text-muted small mt-3"><?= htmlspecialchars($carta['desc']) ?></p>
