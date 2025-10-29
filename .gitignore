@@ -1,0 +1,2 @@
+# Ignora la carpeta vendor/ que crea Composer que contiene todos las dependencias solicitadas para el proyecto
+./TP/vendor/
