@@ -1,6 +1,6 @@
 <?php
 
-require './vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Illuminate\Database\Capsule\Manager;
 
@@ -8,7 +8,7 @@ use Illuminate\Database\Capsule\Manager;
 $config = [
     'driver' => 'mysql',
     'host' => 'localhost',
-    'database' => 'some_database',
+    'database' => 'bdautenticacion',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
@@ -26,3 +26,6 @@ $capsule->setAsGlobal();
 
 // Inicializamos `bootEloquent` para poder usar `Models` globalmente.
 $capsule->bootEloquent();
+
+// Configuramos la conexión predeterminada para el administrador de bases de datos subyacente.
+$capsule->getDatabaseManager()->setDefaultConnection('mysql');
