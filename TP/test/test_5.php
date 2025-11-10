@@ -12,7 +12,7 @@ Rol::truncate();
 UsuarioRol::truncate();
 */
 
-// Creo algunos usuarios
+// Creo algunos usuarios. Create() ademas de crear el objeto e insertarlo en la base de datos, retorna el objeto 
 $usuarios = [
   Usuario::create(['usnombre' => 'Emi', 'uspass' => '123', 'usmail' => 'emi@mail.com',]),
   Usuario::create(['usnombre' => 'Webox', 'uspass' => 'abc', 'usmail' => 'webox@mail.com']),
