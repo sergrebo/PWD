@@ -30,16 +30,24 @@
 		</section>
 	</article>
 
-	<article>
-		<div class="row">
-			<a href="./vista/tp/libreria/tarot-cartas.php">API Tarot con Guzzle - Probar conexión</a>
-		</div>
-		<div class="row">
-			<a href="./vista/tp/libreria/listadoCartas.php">TP Librería - Tarot con Guzzle</a>
-		</div>
-		<div class="row">
-			<a href="./vista/tp/libreria/tirada.php">TP Librería - Tirada de Carta de Tarot</a>
-		</div>
+	<article class="card mt-5 w-50 mx-auto bg-secondary-subtle">
+		<section class="card-body mb-3">
+			<div class="row">
+				<div class="col mb-3">
+					<a href="#divColapsable2" class="align-middle text-decoration-none" data-bs-toggle="collapse" aria-expanded="false" aria-controls="divColapsable">
+						<h5 class="card-title">Trabajo Practico Librerías Útiles</h5>
+						<h6 class="card-subtitle text-body-secondary mb-2">Guzzle</h6>
+					</a>
+				</div>
+			</div>
+			<div class="row collapse bg-transparent" id="divColapsable2">
+				<div class="list-group text-start w-75 mx-auto">
+					<a href="./vista/tp/libreria/tarot-cartas.php" class="list-group-item list-group-item-action list-group-item-dark">Endpoint Principal - Prueba de conexión</a>
+					<a href="./vista/tp/libreria/listadoCartas.php" class="list-group-item list-group-item-action list-group-item-dark">listadoCartas.php</a>
+					<a href="./vista/tp/libreria/tirada.php" class="list-group-item list-group-item-action list-group-item-dark">tirada.php - Tirada de Carta de Tarot</a>
+				</div>
+
+		</section>
 	</article>
 
 </main>
