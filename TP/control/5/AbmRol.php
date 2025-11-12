@@ -1,6 +1,8 @@
 <?php
 class AbmRol
 {
+  //Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
+
   /**
    * Crea un nuevo registro en la tabla roles a partir del arreglo proviniente de un formulario
    * @param array $param
@@ -9,7 +11,7 @@ class AbmRol
   public function alta($param)
   {
     $respuesta = false;
-    if (!isset($param['rodescripcion']) || empty(trim($param['rodescripcion']))) {
+    if (isset($param['rodescripcion']) || !empty(trim($param['rodescripcion']))) {
       $nuevoRol = Rol::create(['rodescripcion' => $param['rodescripcion']]);
       if (!empty($nuevoRol)) {
         $respuesta = true;
