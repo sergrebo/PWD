@@ -1,9 +1,9 @@
 <?php
 
 require '../bootstrap.php';
-require '../modelo/5/Usuario.php';
-require '../modelo/5/Rol.php';
-require '../modelo/5/UsuarioRol.php';
+
+use TP5\Modelos\Usuario;
+use TP5\Modelos\Rol;
 
 // Limpio datos previos (opcional, solo para pruebas)
 /*

@@ -8,14 +8,13 @@ use TP5\Controladores\AbmUsuario;
 
 $mensaje = "ERROR - No se pudo actualizar el registro.";
 $datos = darDatosSubmitted();
-//print_r($datos);
 if ($datos['estado'] == 'deshabilitado') {
   $fechaActual = getdate();
   $fecha = $fechaActual['year'] . "/" .  $fechaActual['mon'] . "/" . $fechaActual['mday']; 
-  //echo $fecha;
   $datos['usdeshabilitado'] = $fecha;
+} else {
+  $datos['usdeshabilitado'] = null;
 }
-print_r($datos);
 $abmUsuario = new AbmUsuario;
 $respuesta = $abmUsuario->modificiacion($datos);
 if ($respuesta) {
@@ -24,7 +23,7 @@ if ($respuesta) {
 
 require_once '../../../estructura/cabecera-retorno.php'; ?>
 
-<main class="container">
+<main class="container mt-5">
   <h4 class="text-center"><?php echo $mensaje ?></h4>
 </main>
 

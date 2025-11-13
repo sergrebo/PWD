@@ -54,7 +54,8 @@ class AbmUsuario
     $control = $obj->update([
       'usnombre' => $param['usnombre'],
       'uspass' => $param['uspass'],
-      'usmail' => $param['usmail']
+      'usmail' => $param['usmail'],
+      'usdeshabilitado' => $param['usdeshabilitado']
     ]);
     // update() responde el numero de registros modificados que en este caso debe ser siempre 1
     if ($control == 1) {

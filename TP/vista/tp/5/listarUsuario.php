@@ -1,6 +1,6 @@
 <?php
 
-//un script Vista/listarUsuario.php que liste los usuario registrados y permita actualizar sus datos o realizar un borrado lógico. Las acciones que se van a poder invocar son: accion/actualizarLogin.php y accion/eliminarLogin.php
+// Implementar en la capa de la vista un script Vista/listarUsuario.php que liste los usuario registrados y permita actualizar sus datos o realizar un borrado lógico. Las acciones que se van a poder invocar son: accion/actualizarLogin.php y accion/eliminarLogin.php
 
 require '../../../vendor/autoload.php';
 require '../../../bootstrap.php';
@@ -13,7 +13,6 @@ $usuarios = $abmUsuario->buscar([]);
 include_once '../../estructura/cabecera-retorno.php'; ?>
 
 <main class="container my-5">
-  <!-- <pre><?php print_r($usuarios['data']->toArray()) ?></pre> -->
   <table class="table">
     <thead>
       <tr>
@@ -26,7 +25,7 @@ include_once '../../estructura/cabecera-retorno.php'; ?>
     <tbody>
       <?php
       foreach ($usuarios['data']->toArray() as $usuario) {
-        echo "<tr><th scope='row' class='text-center'>" . $usuario['id'] . "</th><td>" . $usuario['usnombre'] . "</td><td>" . $usuario['usmail'] . "</td><td class='text-center d-flex justify-content-evenly'><a href='./accion/actualizarLogin.php?id=" . $usuario['id'] . "&accion=actualizar' title='Modificar' class='link-secondary'><i class='bi bi-pen'></i></?><a href='#' title='Borrar' class='link-secondary'><i class='bi bi-trash'></i></a></td></tr>";
+        echo "<tr><th scope='row' class='text-center'>" . $usuario['id'] . "</th><td>" . $usuario['usnombre'] . "</td><td>" . $usuario['usmail'] . "</td><td class='text-center d-flex justify-content-evenly'><a href='./accion/actualizarLogin.php?id=" . $usuario['id'] . "&accion=actualizar' title='Modificar' class='link-secondary'><i class='bi bi-pen'></i></?><a href='./accion/eliminarLogin.php?id=" . $usuario['id'] . "&accion=borrar' title='Borrar' class='link-secondary'><i class='bi bi-trash'></i></a></td></tr>";
       }
       ?>
     </tbody>
