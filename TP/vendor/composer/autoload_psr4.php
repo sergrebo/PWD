@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'voku\\' => array($vendorDir . '/voku/portable-ascii/src/voku'),
+    'TP5\\Modelos\\' => array($baseDir . '/modelo/5'),
+    'TP5\\Controladores\\' => array($baseDir . '/control/5'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Php73\\' => array($vendorDir . '/symfony/polyfill-php73'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
@@ -23,7 +25,7 @@ return array(
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Clock\\' => array($vendorDir . '/psr/clock/src'),
-    'Illuminate\\Support\\' => array($vendorDir . '/illuminate/macroable', $vendorDir . '/illuminate/collections', $vendorDir . '/illuminate/support'),
+    'Illuminate\\Support\\' => array($vendorDir . '/illuminate/collections', $vendorDir . '/illuminate/macroable', $vendorDir . '/illuminate/support'),
     'Illuminate\\Database\\' => array($vendorDir . '/illuminate/database'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
@@ -33,5 +35,4 @@ return array(
     'Doctrine\\Inflector\\' => array($vendorDir . '/doctrine/inflector/src'),
     'Carbon\\Doctrine\\' => array($vendorDir . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
-    '' => array($baseDir . '/control'),
 );

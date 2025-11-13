@@ -1,4 +1,4 @@
-<?php
+<?php namespace TP5\Modelos;
 
 use Illuminate\Database\Eloquent\Model;
 

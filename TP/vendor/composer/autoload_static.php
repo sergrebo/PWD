@@ -27,6 +27,11 @@ class ComposerStaticInit9ed1b1ff3955bf8f3453047850862472
         array (
             'voku\\' => 5,
         ),
+        'T' => 
+        array (
+            'TP5\\Modelos\\' => 12,
+            'TP5\\Controladores\\' => 18,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -77,6 +82,14 @@ class ComposerStaticInit9ed1b1ff3955bf8f3453047850862472
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'TP5\\Modelos\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/modelo/5',
+        ),
+        'TP5\\Controladores\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/control/5',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -145,8 +158,8 @@ class ComposerStaticInit9ed1b1ff3955bf8f3453047850862472
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/macroable',
-            1 => __DIR__ . '/..' . '/illuminate/collections',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
+            1 => __DIR__ . '/..' . '/illuminate/macroable',
             2 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Database\\' => 
@@ -187,10 +200,6 @@ class ComposerStaticInit9ed1b1ff3955bf8f3453047850862472
         ),
     );
 
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/../..' . '/control',
-    );
-
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -207,7 +216,6 @@ class ComposerStaticInit9ed1b1ff3955bf8f3453047850862472
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit9ed1b1ff3955bf8f3453047850862472::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit9ed1b1ff3955bf8f3453047850862472::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit9ed1b1ff3955bf8f3453047850862472::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInit9ed1b1ff3955bf8f3453047850862472::$classMap;
 
         }, null, ClassLoader::class);

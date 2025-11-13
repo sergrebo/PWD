@@ -1,6 +1,7 @@
-<?php
+<?php namespace TP5\Modelos;
 
 use Illuminate\Database\Eloquent\Model;
+use TP5\Modelos\Rol;
 
 class Usuario extends Model
 {

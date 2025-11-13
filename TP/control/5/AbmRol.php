@@ -1,4 +1,7 @@
-<?php
+<?php namespace TP5\Controladores;
+
+use TP5\Modelos\Rol;
+
 class AbmRol
 {
   //Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto

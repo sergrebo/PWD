@@ -7,8 +7,8 @@
   },
   "autoload": {
     "psr-4": {
-      "": "modelo/",
-      "": "control/"
+      "TP5\\Modelos\\": "modelo/5/",
+      "TP5\\Controladores\\": "control/5/"
     }
   }
 }
