@@ -7,7 +7,11 @@ class Session
   /**
    * Constructor que inicia la sesión.
    */
-  public function __construct( $usuario,  $rol){$this->usuario = $usuario;$this->rol = $rol;}
+  public function __construct( $usuario,  $rol)
+  {
+    $this->usuario = $usuario;
+    $this->rol = $rol;
+  }
 	
   public function getUsuario() {return $this->usuario;}
 

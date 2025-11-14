@@ -5,7 +5,7 @@
 include_once '../../estructura/cabecera-retorno.php'; ?>
 
 <main class="container mt-5">
-  <form action="" method="post">
+  <form action="accion/validarLogin.php" method="post">
     <div class="mb-3">
       <label for="" class="form label">Nombre de usuario</label>
       <input type="text" name="usnombre" id="" class="form-control">
