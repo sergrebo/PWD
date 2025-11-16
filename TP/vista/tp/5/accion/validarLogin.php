@@ -4,13 +4,11 @@ require '../../../../vendor/autoload.php';
 require '../../../../bootstrap.php';
 require '../../../../configuracion.php';
 
+use TP5\Controladores\Session;
 use TP5\Controladores\AbmUsuario;
 
 $datos = darDatosSubmitted();
-$abmUsuario = new AbmUsuario();
-$argumento['usnombre'] = $datos['usnombre'];
-$resultado = $abmUsuario->buscar($argumento);
-// print_r($resultado);
+
 $respuesta = [
   [
     'mensaje' => "<h4 class='text-center text-danger'>ERROR - Nombre de usuario o contraseña incorrecto, intentelo nuevamente. Redireccionando</h4>",
@@ -22,12 +20,29 @@ $respuesta = [
   ]
 ];
 
+$sesion = new Session();
+if ($sesion->validar($datos)) {
+  $mensaje = $respuesta[1];
+} else {
+  $mensaje = $respuesta[0];
+}
+
+/*
+$abmUsuario = new AbmUsuario();
+$argumento['usnombre'] = $datos['usnombre'];
+$resultado = $abmUsuario->buscar($argumento);
+
+
+
 if ($resultado['success'] == 0) {
   // No se encontró usuario con ese usnombre
   $mensaje = $respuesta[0];
 } else {
   // Se encontró usuario con ese nombre
   $arregloUsuario = $resultado['data']->toArray()[0];
+
+
+
 
   if ($arregloUsuario['uspass'] == $datos['uspass']) {
     // La contraseña es correcta
@@ -38,6 +53,8 @@ if ($resultado['success'] == 0) {
     $mensaje = $respuesta[0];
   }
 }
+*/
+
 
 include_once '../../../estructura/cabecera-retorno.php'; ?>
 
