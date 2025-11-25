@@ -1,104 +1,27 @@
-<?php
-class Usuario {
-  private $idUsuario;
-  private $usNombre;
-  private $usPass;
-  private $usMail;
-  private $usDeshabilitado;
-  private $mensajeOperacion;
+<?php namespace TP5\Modelos;
 
-  public function __construct()
-  {
-    $this->idUsuario = "";
-    $this->usNombre = "";
-    $this->usPass = "";
-    $this->usMail = "";
-    $this->usDeshabilitado = "";
-    $this->mensajeOperacion = "";
-  }
+use Illuminate\Database\Eloquent\Model;
+use TP5\Modelos\Rol;
+
+class Usuario extends Model
+{
+  /**
+   * Por defecto, Eloquent espera que las columnas created_at y updated_at existan en la tabla correspondiente de la base de datos del modelo. Eloquent establecerá automáticamente los valores de estas columnas cuando se creen o actualicen los modelos. Si no quieres que estas columnas sean gestionadas automáticamente por Eloquent, debes definir una propiedad $timestamps en tu modelo con el valor false.
+   * Indica si el modelo debe estar timestamped.
+   * @var bool
+   */
+  public $timestamps = false;
+
+  protected $fillable = ['usnombre', 'uspass', 'usmail', 'usdeshabilitado'];
 
   /**
-   * Setea los atributos en un objeto usuario ya creado
+   * Las relaciones muchos-a-muchos se definen escribiendo un método que devuelva el resultado del método belongsToMany. El método belongsToMany es proporcionado por la clase base Illuminate\Database\Eloquent\Model que es utilizada por todos los modelos Eloquent de su aplicación. El primer argumento pasado a este método es el nombre de la clase modelo relacionada.
+   * Para determinar el nombre de tabla de la tabla intermedia de la relación, Eloquent unirá los dos nombres de modelos relacionados en orden alfabético. Sin embargo, puede sobreescribir esta convención. Puede hacerlo pasando un segundo argumento al método belongsToMany.
+   * Además de personalizar el nombre de la tabla intermedia, también puede personalizar los nombres de las columnas de las claves de la tabla pasando argumentos adicionales al método belongsToMany. El tercer argumento es el nombre de la clave externa del modelo en el que se está definiendo la relación, mientras que el cuarto argumento es el nombre de la clave externa del modelo al que se está uniendo.
+   * Devuelve los roles al que pertenece el usuario.
    */
-  public function setear($idUsuario, $usNombre, $usPass, $usMail, $usDeshabilitado)
+  public function roles()
   {
-    $this->setIdUsuario($idUsuario);
-    $this->setUsNombre($usNombre);
-    $this->setUsPass($usPass);
-    $this->setUsMail($usMail);
-    $this->setUsDeshabilitado($usDeshabilitado);
-  }
-
-  public function getIdUsuario() {return $this->idUsuario;}
-
-	public function getUsNombre() {return $this->usNombre;}
-
-	public function getUsPass() {return $this->usPass;}
-
-	public function getUsMail() {return $this->usMail;}
-
-	public function getUsDeshabilitado() {return $this->usDeshabilitado;}
-
-	public function getMensajeOperacion() {return $this->mensajeOperacion;}
-
-	public function setIdUsuario( $idUsuario): void {$this->idUsuario = $idUsuario;}
-
-	public function setUsNombre( $usNombre): void {$this->usNombre = $usNombre;}
-
-	public function setUsPass( $usPass): void {$this->usPass = $usPass;}
-
-	public function setUsMail( $usMail): void {$this->usMail = $usMail;}
-
-	public function setUsDeshabilitado( $usDeshabilitado): void {$this->usDeshabilitado = $usDeshabilitado;}
-
-  public function setMensajeOperacion( $mensajeOperacion): void {$this->mensajeOperacion = $mensajeOperacion;}
-
-  public function __toString()
-  {
-    return "Usuario: id: " . $this->getIdUsuario() . " | Nombre: " . $this->getUsNombre() . " | Pass: " . $this->getUsPass() . " | mail: " . $this->getUsMail() . " | Deshabilitado: " . $this->getUsDeshabilitado() . " | Mensaje: " . $this->getMensajeOperacion(); 
-  }
-
-  /**
-   * Carga un objeto usuario desde un registro de la base de datos
-   */
-  public function cargar()
-  {
-    $respuesta = false;
-    $base = new BaseDatos();
-    $sql = "SELECT * FROM usuarios WHERE id_usuario=" . $this->getIdUsuario();
-    if ($base->iniciar()) {
-      $respuesta = $base->Ejecutar($sql);
-      if ($respuesta > -1) {
-        if ($respuesta > 0) {
-          $row = $base->Registro();
-          $this->setear($row['id_usuario'], $row['us_nombre'], $row['us_pass'], $row['us_mail'], $row['us_deshabilitado']);
-        }
-      }
-    } else {
-      $this->setMensajeOperacion("Usuario->cargar: " . $base->getError());
-    }
-    return $respuesta;
-  }
-
-  /**
-   * Inserta un nuevo registro a la tabla usuarios
-   */
-  public function insertar()
-  {
-    $respuesta = false;
-    $base = new BaseDatos();
-    // Todo id_usuario como numero auto incremental, por eso no se encuentra en la sentencia sql
-    $sql = "INSERT INTO usuarios(us_nombre, us_pass, us_mail, us_deshabilitado) VALUES ('" . $this->getUsNombre() . "', '" . $this->getUsPass() . "', '" . $this->getUsMail() . "', '" . $this->getUsDeshabilitado() . "');";
-    if ($base->Iniciar()) {
-      if ($elid = $base->Ejecutar($sql)) {
-        $this->setId($elid);
-        $respuesta = true;
-      } else {
-        $this->setMensajeOperacion("Usuario->insertar: " . $base->getError());
-      }
-    } else {
-      $this->setMensajeOperacion("Tabla->insertar: " . $base->getError());
-    }
-    return $respuesta;
+    return $this->belongsToMany(Rol::class, 'usuariorol', 'idusuario', 'idrol');
   }
 }

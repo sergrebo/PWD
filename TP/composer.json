@@ -2,12 +2,13 @@
   "name": "pwd/tp",
   "description": "Trabajo Práctico Librerías - Consumo de API con Guzzle",
   "require": {
-    "guzzlehttp/guzzle": "^7.0"
+    "guzzlehttp/guzzle": "^7.0",
+    "illuminate/database": "^8.0"
   },
   "autoload": {
     "psr-4": {
-      "": "modelo/",
-      "": "control/"
+      "TP5\\Modelos\\": "modelo/5/",
+      "TP5\\Controladores\\": "control/5/"
     }
   }
 }
