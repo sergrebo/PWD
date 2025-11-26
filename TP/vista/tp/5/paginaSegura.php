@@ -2,6 +2,8 @@
 
 include_once '../../estructura/cabecera-retorno.php'; 
 
+session_start();
+
 print_r($_SESSION);
 print_r($_COOKIE);
 ?>

@@ -29,6 +29,8 @@ class ComposerStaticInit9ed1b1ff3955bf8f3453047850862472
         ),
         'T' => 
         array (
+            'TPfinal\\Modelos\\' => 16,
+            'TPfinal\\Controladores\\' => 22,
             'TP5\\Modelos\\' => 12,
             'TP5\\Controladores\\' => 18,
         ),
@@ -82,6 +84,14 @@ class ComposerStaticInit9ed1b1ff3955bf8f3453047850862472
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'TPfinal\\Modelos\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/modelo/final',
+        ),
+        'TPfinal\\Controladores\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/control/final',
         ),
         'TP5\\Modelos\\' => 
         array (

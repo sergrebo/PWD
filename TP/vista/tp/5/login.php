@@ -1,6 +1,9 @@
 <?php
 
 // Implementar en la capa de la vista un script Vista/login.php que invoque al script accion/verificarLogin.php el cual redirecciona al script Vista/paginaSegura.php si los datos ingresados se corresponden con un usuario/pass registrados. Caso contrario se redirecciona nuevamente al script Vista/login.php
+
+session_start();
+
 print_r($_SESSION);
 print_r($_COOKIE);
 include_once '../../estructura/cabecera-retorno.php'; ?>

@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'voku\\' => array($vendorDir . '/voku/portable-ascii/src/voku'),
+    'TPfinal\\Modelos\\' => array($baseDir . '/modelo/final'),
+    'TPfinal\\Controladores\\' => array($baseDir . '/control/final'),
     'TP5\\Modelos\\' => array($baseDir . '/modelo/5'),
     'TP5\\Controladores\\' => array($baseDir . '/control/5'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
