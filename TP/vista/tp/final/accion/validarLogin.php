@@ -6,7 +6,10 @@ require '../../../../configuracion.php';
 use TPfinal\Controladores\AbmUsuario;
 
 $datos = darDatosSubmitted();
-if (isset($datos['usnombre']) && isset($datos['uspass'])) {
+
+// verEstructura($datos);
+
+if (isset($datos['usnombre']) && isset($datos['uspasshash'])) {
   $abmUsuario = new AbmUsuario();
   $abmUsuario->buscar($datos);
 } else {
