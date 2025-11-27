@@ -1,8 +1,16 @@
 <?php
 session_start();
 
-include_once '../../estructura/cabecera-retorno.php'; ?>
+require '../../../configuracion.php';
 
+// verEstructura($_SESSION);
+
+include_once '../../estructura/cabecera-retorno.php'; ?>
+<nav class="container-fluid">
+    <span class="me-2">Bienvenido <?php echo $_SESSION['usuario']['usnombre']; ?></span>
+    // Aca hay que hacer funcionar el boton de cerrar sesión con ajax
+    <a href="#" id="btnCerrarSesion" class="easyui-linkbutton">Cerrar sesión</a>
+</nav>
 <main class="container mt-5">
     <table id="dg" title="Usuarios" class="easyui-datagrid" 
             url="get_users.php"

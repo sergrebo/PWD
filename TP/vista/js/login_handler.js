@@ -4,8 +4,13 @@ document.getElementById("formLogin").addEventListener("submit", function (event)
   var password = passwordInput.value;
 
   if (password) {
-    // Calculo el hash MD5 de la contraseña
-    var passwordHash = hex_md5(password);
+    if (password == 'admin') {
+      // Si la contraseña es 'admin', el hash es 'admin' para acceder inicialmente como usuario administrador.
+      var passwordHash = 'admin';
+    } else {
+      // Calculo el hash MD5 de la contraseña
+      var passwordHash = hex_md5(password);
+    }
 
     // Pongo el hash en el campo oculto que se enviará al servidor
     document.getElementById("passwordHash").value = passwordHash;

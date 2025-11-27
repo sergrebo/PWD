@@ -2,7 +2,8 @@
 session_start();
 
 if (isset($_SESSION['usuario'])) {
-    header('Location: http://localhost/PWD/TP/vista/tp/final/paginaSegura.php');
+    // TEMPORAL - El redireccionamiento debe corregirse.
+    header('Location: http://localhost/PWD/TP/vista/tp/final/listarUsuario.php');
     exit();
 }
 
@@ -12,17 +13,15 @@ include_once '../../estructura/cabecera-retorno.php';
 <main class="container mt-5">
     <form action="accion/validarLogin.php" id="formLogin" method="post">
         <div class="mb-3">
-            <label for="" class="form label">Nombre de usuario</label>
-            <input type="text" name="usnombre" id="usnombre" class="form-control">
+            <input name="usnombre" id="usnombre" class="easyui-textbox" data-options="prompt: 'Ingrese su nombre de usuario', iconCls: 'icon-man'">
         </div>
         <div class="mb-3">
-            <label for="" class="form label">Contraseña</label>
-            <input type="password" name="uspass" id="uspass" class="form-control">
+            <input name="uspass" id="uspass" class="easyui-passwordbox" data-options="prompt: 'Ingrese su contraseña'">
         </div>
 
         <input type="hidden" name="uspasshash" id="passwordHash">
 
-        <input type="submit" value="Iniciar sesión" class="btn btn-primary">
+        <input type="submit" value="Iniciar sesión" class="">
     </form>
 </main>
 
