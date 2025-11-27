@@ -14,7 +14,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- Bootstrap icon stylesheet CDN via jsDelivr -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  
+
+  <!-- EasyUI -->
+  <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+  <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+  <!--<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">-->
+  <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+
   <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 
