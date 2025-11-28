@@ -26,7 +26,7 @@ if (isset($datos['usnombre']) && isset($datos['uspasshash'])) {
   $abmUsuario = new AbmUsuario();
   $usuarios = $abmUsuario->buscar($datos)->toArray();
 
-  verEstructura($usuarios);
+  // verEstructura($usuarios);
 
   if (!empty($usuarios)) {
     // Solo puede haber un unico usuario por cada usnombre.
@@ -34,18 +34,18 @@ if (isset($datos['usnombre']) && isset($datos['uspasshash'])) {
     if ($usuario['uspass'] === $datos['uspasshash']) {
       // Busco el usuario como objeto para acceder a sus relaciones
       $usuarioObj = $abmUsuario->buscar($datos)->first();
-      
+
       // Accedo a la colección de roles
-      $roles = $usuarioObj->roles; 
-      
+      $roles = $usuarioObj->roles;
+
       // Si quieres ver la estructura de los roles:
-      verEstructura($roles->toArray());
+      // verEstructura($roles->toArray());
 
       // Inicio sesión
       $objSession = new Session();
       // Pasamos los roles (puedes pasarlos como array o colección, dependiendo de lo que necesites en la sesión)
       $objSession->iniciar($usuario['idusuario'], $usuario['usnombre'], $roles->toArray());
-      
+
 
       // Redirijo al usuario a la página correspondiente. FALTA DEFINIR
       $mensaje = $respuesta[1];
@@ -63,13 +63,13 @@ if (isset($datos['usnombre']) && isset($datos['uspasshash'])) {
   $mensaje = $respuesta[0];
 }
 
-include_once '../../../../estructura/cabecera-retorno.php'; ?>
+include_once '../../../estructura/cabecera-retorno.php'; ?>
 
 <main class="container mt-5">
-  <?php 
+  <?php
   echo $mensaje['mensaje'];
   header($mensaje['redireccion']);
   ?>
 </main>
 
-<?php include_once '../../../../estructura/pie.php'; ?>
+<?php include_once '../../../estructura/pie.php'; ?>
